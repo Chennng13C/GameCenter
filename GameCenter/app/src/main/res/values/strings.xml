@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">final_project</string>
+    <string name="Buy">購買</string>
+    <string name="Give">送禮</string>
+    <string name="CheckBox">我已同意上述資訊</string>
+    <string name="Name">收禮者帳號：</string>
+    <string name="speak">對他說的話：</string>
+    <string name="clean">清除</string>
+</resources>
