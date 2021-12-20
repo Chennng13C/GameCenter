@@ -6,5 +6,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="android.example.final_project.GamePage">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fileList"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="55dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sc_layout"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/Buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp" />
 
+            <CheckBox
+                android:id="@+id/BuyCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:minHeight="48dp"
+                android:text="@string/CheckBox" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:onClick="Buy"
+            android:text="購買" />
+    </LinearLayout>
 </RelativeLayout>
