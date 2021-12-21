@@ -6,5 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".BuyCar">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-58dp"
+        tools:layout_editor_absoluteY="0dp" />
 
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/Buy"
+        android:onClick="buy"
+        app:layout_constraintBottom_toBottomOf="@+id/RecyclerView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/clean"
+        android:onClick="Clean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toEndOf="@+id/buy"
+        app:layout_constraintTop_toTopOf="@+id/buy" />
 </androidx.constraintlayout.widget.ConstraintLayout>
