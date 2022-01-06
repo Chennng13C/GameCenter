@@ -46,8 +46,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="305dp"
-        android:layout_height="196dp"
-        android:contentDescription="@string/todo" />
+        android:layout_height="196dp" />
 
     <ScrollView
         android:id="@+id/ScrollView"
