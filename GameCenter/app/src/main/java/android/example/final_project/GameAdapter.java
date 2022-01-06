@@ -42,7 +42,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
         public void onClick(View v) {
             int position = getAdapterPosition();
             Intent intent = new Intent(context, GamePage.class);
-//            intent.putExtra(MainActivity.EXTRA_MESSAGE, position);
+            intent.putExtra(MainActivity.EXTRA_MESSAGE, position);
             context.startActivity(intent);
         }
     }

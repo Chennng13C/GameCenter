@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private LinkedList<Game> GameArray2=null;
     private GameAdapter mAdapter;
     public static final String EXTRA_MESSAGE
-            = "android.example.a107590033_107590039.extra.MESSAGE";
+            = "android.example.final_project.extra.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             GameArray = new LinkedList<Game>();
             String name="俠隱閣(PathOfWuxia)";
             String description="《俠隱閣》是河洛工作室繼《俠客風雲傳》系列後推出的第四部單機作品，本次遊戲再度回歸系列玩家熟悉的養成玩法，以新穎的動漫畫風將武俠世界觀與青春校園生活相結合，扮演初入武林便身懷絕技的的少年俠客，拜入名為俠隱閣的武俠書院，與各色同儕砥礪成長，追尋心目中理想的俠道之路。";
-            String image = "android.resource://android.example.a107590033_107590039/" + R.mipmap.game1_foreground;
+            String image = "android.resource://android.example.final_project/" + R.mipmap.game1_foreground;
             String ingredients = "所有評論： "+ "極度好評 (14,932)\n";
             String Date ="發行日期： " + "2020 年 5 月 1 日\n";
             String Developer ="開發人員： " + "Heluo Studio\n";
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             GameArray.add(new Game(name, description, image, ingredients, procedure,Date,Developer,Publisher));
             name="Destiny 2";
             description="潛入《天命2》免費玩的遊戲世界，盡情體驗反應熱烈的第一人稱射擊（FPS）戰鬥，探索在我們太陽系中的奧秘，自訂獨特的裝備給你的守護者，並釋放元素能力對抗強大的敵人。";
-            image = "android.resource://android.example.a107590033_107590039/" + R.mipmap.destiny_foreground;
+            image = "android.resource://android.example.final_project/" + R.mipmap.destiny_foreground;
             ingredients = "所有評論： "+ "極度好評 (240,876)\n";
             Date ="發行日期： " + "2019 年 10 月 1 日\n";
             Developer ="開發人員： " + "Bungie\n";
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             GameArray.add(new Game(name, description, image, ingredients, procedure,Date,Developer,Publisher));
             name="《終極動員令》重製典藏版";
             description="《終極動員令》與《紅色警戒》將推出 4K 復刻版，這些是由前任 Westwood Studios 成員所打造。包含全 3 款擴充包、重置版多人模式、現代版介面、地圖編輯器、額外影片相簿和超過 7 小時的復刻版音樂。";
-            image = "android.resource://android.example.a107590033_107590039/" + R.mipmap.command_foreground;
+            image = "android.resource://android.example.final_project/" + R.mipmap.command_foreground;
             ingredients = "所有評論： " + "極度好評 (7,955)\n";
             Date ="發行日期： "  + "2020 年 6 月 6 日\n";
             Developer ="開發人員： " + "Petroglyph, Lemon Sky Studios\n";
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             GameArray.add(new Game(name, description, image, ingredients, procedure,Date,Developer,Publisher));
             name="Legendary Knight - 傳奇騎士";
             description="敵人大舉入侵我們的領土，國王帶領一眾手下極力抵抗。國王擔當起保衛家園的重任，誓要將一波又一波的敵軍驅逐出我國國土，並且守護象徵著我國統治權力的神聖雕像。";
-            image = "android.resource://android.example.a107590033_107590039/" + R.mipmap.legendaryknight_foreground;
+            image = "android.resource://android.example.final_project/" + R.mipmap.legendaryknight_foreground;
             ingredients = "所有評論： " + "好評 (31)\n";
             Date ="發行日期： "  + "2020 年 2 月 29 日\n";
             Developer ="開發人員： " + "Oki Aki\n";
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
             GameArray.add(new Game(name, description, image, ingredients, procedure,Date,Developer,Publisher));
             name="Ori and the Will of the Wisps";
             description="在廣闊的奇幻世界中開啟全新旅程，征服強大的敵人，解開極具挑戰性的難題，在一次次任務中，揭開奧裡的命運。";
-            image ="android.resource://android.example.a107590033_107590039/" + R.mipmap.game4_foreground;
+            image ="android.resource://android.example.final_project/" + R.mipmap.game4_foreground;
             ingredients = "所有評論： "  + "極度好評 (27,332)\n";
             Date ="發行日期： "  + "2020 年 3 月 11 日\n";
             Developer ="開發人員： " + "Moon Studios GmbH\n";
