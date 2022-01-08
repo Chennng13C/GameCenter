@@ -22,10 +22,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private LinkedList<Game> games;
+    private LinkedList<Game> games;    //LinkedList 連結串列
     private LinkedList<Game> games2;
-    private List<Integer> buyposition;
-    private List<Integer> buyedposition;
+    private List<Integer> buyposition;   //紀錄購物車
+    private List<Integer> buyedposition; //紀錄已購買
     private List<Integer> BuyArray;
     private List<Integer> BuyedArray;
     private RecyclerView mRecyclerView;
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void SaveData (){
         Gson gson = new Gson();
-        SharedPreferences sharedPreferences = getSharedPreferences( "Games",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences( "Games",MODE_PRIVATE);   //產生一個檔名為Games.xml的設定儲存檔，並只供本專案(app)可讀取
         SharedPreferences sharedPreferences2 = getSharedPreferences( "Games2",MODE_PRIVATE);
         SharedPreferences sharedPreferences3 = getSharedPreferences( "Buyposition",MODE_PRIVATE);
         SharedPreferences sharedPreferences4 = getSharedPreferences( "Buyedposition",MODE_PRIVATE);
@@ -87,38 +87,38 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor GamesEditor2 = sharedPreferences2.edit();
         SharedPreferences.Editor GamesEditor3 = sharedPreferences3.edit();
         SharedPreferences.Editor GamesEditor4 = sharedPreferences4.edit();
-        String json = gson.toJson(games);
+        String json = gson.toJson(games);    // Object to Json
         String json2 = gson.toJson(games2);
         String json3 = gson.toJson(buyposition);
         String json4 = gson.toJson(buyedposition);
-        GamesEditor.putString("Games",json);
+        GamesEditor.putString("Games",json);   //呼叫Editor的putString()方法將json字串的內容寫入設定檔，資料標籤為”Games”
         GamesEditor2.putString("Games2",json2);
         GamesEditor3.putString("Buyposition",json3);
         GamesEditor4.putString("Buyedposition",json4);
         GamesEditor.apply();
         GamesEditor2.apply();
         GamesEditor3.apply();
-        GamesEditor4.apply();
+        GamesEditor4.apply();   // apply() 採用非同步的方式通常來說效率會更高一些
     }
     public void loadData(){
-        Log.d("aaa","aaa");
+        Log.d("aaa","aaa");   //僅輸出debug調試 過濾起來可以通過DDMS的Logcat標籤來選擇
         Gson gson = new Gson();
         Log.d("aaa","aaa");
-        SharedPreferences sharedPreferences = getSharedPreferences("Games",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("Games",MODE_PRIVATE);   //MODE_PRIVATE  只允許本應用程式內存取
         SharedPreferences sharedPreferences2 = getSharedPreferences("Games2",MODE_PRIVATE);
         SharedPreferences sharedPreferences3 = getSharedPreferences("Buyposition",MODE_PRIVATE);
         SharedPreferences sharedPreferences4 = getSharedPreferences("Buyedposition",MODE_PRIVATE);
-        String json = sharedPreferences.getString("Games",null);
+        String json = sharedPreferences.getString("Games",null);    //在同個class =>   null
         String json2 = sharedPreferences2.getString("Games2",null);
         String json3 = sharedPreferences3.getString("Buyposition",null);
         String json4 = sharedPreferences4.getString("Buyedposition",null);
         Type type = new TypeToken<LinkedList<Game>>(){}.getType();
         Type type2 = new TypeToken<ArrayList<Integer>>(){}.getType();
-        if(json!=null) GameArray = gson.fromJson(json,type);
+        if(json!=null) GameArray = gson.fromJson(json,type);     //反序列化
         if(json2!=null) GameArray2 = gson.fromJson(json2,type);
         if(json3!=null) BuyArray = gson.fromJson(json3,type2);
         if(json4!=null) BuyedArray = gson.fromJson(json4,type2);
-        if(GameArray == null){
+        if(GameArray == null){       //初始化
             GameArray = new LinkedList<Game>();
             String name="俠隱閣(PathOfWuxia)";
             String description="《俠隱閣》是河洛工作室繼《俠客風雲傳》系列後推出的第四部單機作品，本次遊戲再度回歸系列玩家熟悉的養成玩法，以新穎的動漫畫風將武俠世界觀與青春校園生活相結合，扮演初入武林便身懷絕技的的少年俠客，拜入名為俠隱閣的武俠書院，與各色同儕砥礪成長，追尋心目中理想的俠道之路。";
