@@ -4,5 +4,5 @@
     <item android:id="@+id/buycar"
         android:title="購物車"
         android:icon="@drawable/ic_shopping_cart_black_24dp"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>     //ifRoom表示只要畫面有空間就顯示
 </menu>
