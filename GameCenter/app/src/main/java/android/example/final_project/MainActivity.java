@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);//連結xml
         mRecyclerView = findViewById(R.id.RecyclerView);
         games = Data.getGame();
         games2 = Data.getGame2();
@@ -53,27 +53,25 @@ public class MainActivity extends AppCompatActivity {
         Data.LoadBuyed(BuyedArray);
         games = Data.getGame();
         games2 = Data.getGame2();
-        mAdapter = new GameAdapter(this, games);
+
+        mAdapter = new GameAdapter(this, games);//設定adapter
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mDecoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));//設定佈局
+        mDecoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);//分割線
         mRecyclerView.addItemDecoration(mDecoration);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu,menu); // 設置要用哪個menu檔做為選單
         return super.onCreateOptionsMenu(menu);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.buycar:
-                Intent intent = new Intent(this, BuyCar.class);
-                startActivity(intent);
-                break;
-            default:
+        if (item.getItemId() == R.id.buycar){                               //如果點選購物車圖案
+            Intent intent = new Intent(this, BuyCar.class);   //切換到購物車畫面
+            startActivity(intent);
         }
         return true;
     }

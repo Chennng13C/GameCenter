@@ -18,8 +18,8 @@ public class GiveActivity extends AppCompatActivity {
     }
     public void Give (View view)
     {
-        Intent intent = new Intent(this, BuyActivity.class);
-        intent.putExtra("function","購買成功，已送給"+name.getText());
+        Intent intent = new Intent(this, BuyActivity.class);        //跳轉到購買頁面
+        intent.putExtra("function","購買成功，已送給"+name.getText());  //將資料一同傳送過去
         startActivity(intent);
     }
 }
