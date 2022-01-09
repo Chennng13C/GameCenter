@@ -17,13 +17,15 @@ public class BuyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buy);
+        setContentView(R.layout.activity_buy);//連結xml
+
+        //得到GamePage的position不然等於-1 (Give function不會傳送position)
         position = getIntent().getIntExtra("position",-1);
-        info = findViewById(R.id.Buy);
-        agree = (CheckBox) findViewById(R.id.BuyCheck);
+        info = findViewById(R.id.Termsofservice);//服務條款
+        agree = (CheckBox) findViewById(R.id.BuyCheck);//勾選
         DisplayGame();
     }
-    private void DisplayGame(){
+    private void DisplayGame(){        //private 所以不會和GamePage的 DisplayGame function衝突
         String Data=
                 "服務條款\n" +
                         " \n" +
@@ -105,35 +107,35 @@ public class BuyActivity extends AppCompatActivity {
                         " \n" +
                         "1.          遊戲中心所提供之各項功能，均依該功能當時之現況提供使用，對於其效能、速度、完整性、可靠性、安全性、正確性等，皆不負擔任何明示或默示之擔保責任。\n" +
                         "2.          遊戲中心竭力維護本網站服務之網頁、伺服器、網域等所傳送的電子郵件或其內容不含有電腦病毒等有害物；但無法保證郵件、檔案或資料之傳輸儲存均正確無誤不會斷線和出錯等，因各該郵件、檔案或資料傳送或儲存失敗、遺失或錯誤等所致之損害，敦煌書局不負賠償責任。\n";
-        info.setText(Data);
+        info.setText(Data);     //顯示服務條款
     }
-    public void Buy(View view)
+    public void Buy(View view)  //由activity_buy.xml button onClick 觸發
     {
         Intent intent = getIntent();
         String function = intent.getStringExtra("function");
-        if(agree.isChecked()&&!Data.getBuyposition().contains(position)) {
-            Toast toast = Toast.makeText(this, function,
+        if(agree.isChecked()&&!Data.getBuyposition().contains(position)) {  //如果已勾選 及 不在購物車中
+            Toast toast = Toast.makeText(this, function,  //function=>"加入購物車" or "購買成功，已送給"+name"
                     Toast.LENGTH_SHORT);
             toast.show();
-            if(position !=-1){
+            if(position !=-1){  //檢查是不是送禮
                 Data.AddGame2(Data.getGame().get(position));
-                Data.Addposition(position);
+                Data.Addposition(position);  //放入購物車
             }
-            Intent intent2 = new Intent(this, MainActivity.class);
+            Intent intent2 = new Intent(this, MainActivity.class); //回主頁
             this.startActivity(intent2);
         }
-        else if(!agree.isChecked())
+        else if(!agree.isChecked()) //未勾選
         {
-            Toast toast = Toast.makeText(this, "請閱讀完上述資訊並同意",
+            Toast toast = Toast.makeText(this, "請閱讀完上述資訊並同意", //顯示訊息
                     Toast.LENGTH_SHORT);
             toast.show();
         }
         else
         {
-            Toast toast = Toast.makeText(this, "已在購物車內",
+            Toast toast = Toast.makeText(this, "已在購物車內",  //顯示訊息
                     Toast.LENGTH_SHORT);
             toast.show();
-            Intent intent2 = new Intent(this, MainActivity.class);
+            Intent intent2 = new Intent(this, MainActivity.class); //回主頁
             this.startActivity(intent2);
         }
     }
